@@ -1,0 +1,77 @@
+<mat-toolbar class="mat-elevation-z8">
+    
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+    </button>
+    <p id="rfm" >PFM &nbsp; > &nbsp; Financial overview</p>
+    <img class="avatar1"  src="https://www.studyinserbia.rs/uploads/attachment/strana/228/large_tara-mountain-5520592_1920.jpg" />
+    <p > &nbsp; Andrej Novakovic </p>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+
+        <img class="avatar" src="https://vignette.wikia.nocookie.net/logopedia/images/8/8d/Telenor_Banka.jpg/revision/latest?cb=20181011131006" />
+
+        
+
+        
+
+        <button mat-button class="menu-button">
+            <mat-icon>home</mat-icon>
+            <span>HOME</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>person</mat-icon>
+            <span>MY ACCOUNTS</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>attach_money</mat-icon>
+            <span>PAYMENTS</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>payment</mat-icon>
+            <span>CARDS</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>swap_horizontal_circle</mat-icon>
+            <span>CURRENCY EXCHANGE</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>list_alt</mat-icon>
+            <span>PRODUCT CATALOGUE</span>
+        </button>
+        <button mat-button class="menu-button"  routerLink="/"  routerLinkActive="mat-accent">
+            <mat-icon>trending_up</mat-icon>
+            <span>PFM</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>settings</mat-icon>
+            <span>SELF CARE</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>support</mat-icon>
+            <span>SUPPORT</span>
+        </button>
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button1">
+            <mat-icon>close</mat-icon>
+            <span>Log out</span>
+        </button>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content mat-elevation-z8">
+
+            <app-transaction></app-transaction>
+            
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

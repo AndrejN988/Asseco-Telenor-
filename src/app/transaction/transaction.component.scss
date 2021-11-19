@@ -1,0 +1,123 @@
+#slikaMala{
+    background-size: cover;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+    margin-bottom: 13px;
+    margin-left:45px;
+    border-style:outset
+  }
+
+  #strelica{
+    background-size: cover;
+    height: 20px;
+    width: 20px;
+  //  border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+    margin-bottom: 13px;
+    margin-left:45px;
+    //border-style:outset
+  }
+
+  #centarForma{
+    margin: auto;
+    width: 50%;
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  .mat-select-panel {
+    background: #fff;
+  }
+  
+  .mat-select-panel:not([class*=mat-elevation-z]) {
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+  }
+
+  table{
+      width: 100%;
+      width: 1400px;
+      height: 700px;;
+  }
+
+  #naslov{
+      font-size: 1rem;
+      color: rgb(70, 164, 219);
+     // background-color: rgb(70, 164, 219);
+      
+      
+  }
+  
+  mat-chip{
+    color: white;
+    font-size: 20px;
+    background-color:#0A8AD2 !important;
+    border-top-left-radius: 0px!important;
+    border-bottom-left-radius: 0px!important;
+  
+  }
+
+ mat-icon{
+     color: rgb(52, 128, 243);
+ }
+
+
+.btn-primary{
+    font-size: 12px;
+}
+#aaa{
+    margin-top: 10px;
+    font-size: 30px;
+    color: rgb(37, 164, 196);
+}
+
+#aaa1{
+    font-size: 15px;
+    color: rgba(114, 114, 114, 0.527);
+}
+
+#and{
+   // width: 20%;
+    size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+#and1{
+  //  width: 5%;
+  
+}
+
+#and2{
+  //  width: 10%;
+}
+
+#and3{
+   // width: 15%;
+    color: rgb(40, 152, 218);
+    font-size: 30px;
+}
+
+@media screen and (max-device-width: 800px) {
+
+  .table{
+    width: 20px;
+    height: 20px;
+  }
+
+  #slikaMala{
+    background-size: cover;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+    margin-bottom: 13px;
+    margin-left:45px;
+    border-style:outset
+  }
+}

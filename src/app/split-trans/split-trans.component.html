@@ -1,0 +1,60 @@
+<div class="modal-header">
+    <h4 class="modal-title" 
+        id="modal-basic-title">
+        Choose category
+    </h4>
+  
+  </div>
+  
+  <div class="modal-body">
+  <div class="centarForma">
+   <ng-container matColumnDef="marezovic">
+  <form [formGroup]="form" (ngSubmit)="submit(form)">
+    <mat-form-field appearance="fill">
+      <mat-label>Choose category</mat-label>
+      <mat-select name="andr" required [(ngModel)]="selected"  formControlName="kategori"  placeholder="Categories">
+        <ng-container *ngFor="let kat of category">
+            <mat-option *ngIf="kat.parentCode==null"  value="{{kat.code}}">
+              {{kat.name}}
+          </mat-option>
+        </ng-container>
+  </mat-select>
+      
+      
+      
+    </mat-form-field>
+      <br>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Choose subcategory</mat-label>
+      <mat-select name="ok" formControlName="sabkategori" >
+        <ng-container *ngFor="let pod of category">
+          <mat-option *ngIf="pod.parentCode==selected"  value="{{pod.code}}">
+            {{pod.name}}
+          </mat-option>
+        </ng-container>  
+      </mat-select>
+ 
+    </mat-form-field>
+    
+  </form>
+  </ng-container>
+  <div class="modal-footer">
+    <button id="izadji" type="button" 
+    class="btn btn-success"
+          >
+          Cancel
+      </button>
+      <button (click)="submit(form)" id="sacuvaj" type="button" 
+      class="btn btn-success" 
+          >
+         Apply
+      </button>
+  </div>
+  
+  </div>
+  </div>
+  
+  
+  
+  
