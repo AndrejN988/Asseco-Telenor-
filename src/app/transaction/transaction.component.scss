@@ -87,13 +87,15 @@
     
 }
 
-#and1{
+#ctg{
   //  width: 5%;
+  margin-top:11px ;
+  background-color:gray !important;
   
 }
 
-#and2{
-  //  width: 10%;
+#ctg1{
+  margin-top:11px ;
 }
 
 #and3{
@@ -102,22 +104,145 @@
     font-size: 30px;
 }
 
-@media screen and (max-device-width: 800px) {
+#and4{
+  font-size: 11px;
+ }
 
-  .table{
-    width: 20px;
-    height: 20px;
+ #ctz{
+ // border-radius: 3px; 
+ // margin-bottom: 10px;
+//  white-space: nowrap;
+  
+ }
+
+ #vel{
+   font-size: 16px;
+ }
+
+ 
+
+
+
+.mat-form-field{
+  width: 140px !important;
+  height: 20px !important;
+   border-style: double;
+}
+
+.mat-select{
+  font-size: 20px !important;
+  height: 20px !important;
+  width: 140px !important;
+ 
+}
+
+ 
+
+
+@media screen and (max-width: 960px) {
+
+  .mat-select{
+    font-size: 15px !important;
+    height: 13px !important;
+    width: 130px !important;
+   
+  }
+
+  table{
+    width: 500px;
+    height: 500px;
   }
 
   #slikaMala{
     background-size: cover;
-    height: 20px;
-    width: 20px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
     flex-shrink: 0;
     object-fit: cover;
     margin-bottom: 13px;
     margin-left:45px;
     border-style:outset
+  }
+
+  #ctz{
+    font-size: 5px;
+    border-radius: 3px; 
+    margin-left: 30px;
+    align-items: center;
+    margin-top: 5px;
+   }
+
+  #and3{
+    // width: 15%;
+     color: rgb(40, 152, 218);
+     font-size: 11px;
+ }
+
+  #and4{
+    font-size: 9px;
+    border-style: outset;
+  }
+
+  #ctg{
+    font-size: 11px;
+    margin-top:11px ;
+    background-color:gray !important;
+    
+  }
+  
+  #ctg1{
+    margin-top:11px ;
+    font-size: 11px;
+  }
+
+  #aaa{
+    margin-top: 10px;
+    font-size: 15px;
+    color: rgb(37, 164, 196);
+}
+
+#aaa1{
+    font-size: 8px;
+    color: rgba(114, 114, 114, 0.527);
+}
+
+  mat-table {
+    border: 0;
+    vertical-align: middle
+  }
+
+  mat-table caption {
+    font-size: 1em;
+  }
+
+  mat-row {
+    border-bottom: 5px solid #ddd;
+    display: block;
+  }
+  
+  mat-cell {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 1em;
+    text-align: right;
+    font-weight: bold;
+    height:30px;
+    margin-bottom: 4%;
+  }
+  .mat-cell:before {
+  
+    content: attr(data-label);
+    float: left;
+    text-transform: uppercase;
+    font-weight: normal;
+    
+    font-size: .85em;
+  }
+  .mat-cell:last-child {
+    border-bottom: 0;
+  }
+  .mat-cell:first-child {
+    margin-top: 4%;
   }
 }

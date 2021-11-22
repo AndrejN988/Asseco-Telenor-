@@ -1,18 +1,75 @@
-<div class="modal-header">
-    <h4 class="modal-title" 
-        id="modal-basic-title">
-        Choose category
-    </h4>
-  
-  </div>
+<div class="bro">
+
+    <form [formGroup]="form">
+        
+        
+          
+          <div class="modal-body">
+          <div class="centarForma">
+
+            <h4>Please split the transactions to<br> categories </h4>
+            
+        
+         
+            <mat-form-field appearance="fill">
+              <mat-label>Choose category</mat-label>
+              <mat-select name="andr" required [(ngModel)]="selected"  formControlName="kategori"  placeholder="Categories">
+                <ng-container *ngFor="let kat of category">
+                    <mat-option *ngIf="kat.parentCode==null"  value="{{kat.code}}">
+                      {{kat.name}}
+                  </mat-option>
+                </ng-container>
+          </mat-select>
+              
+              
+              
+            </mat-form-field>
+              <br>
+          
+            <mat-form-field appearance="fill">
+              <mat-label>Choose subcategory</mat-label>
+              <mat-select name="ok" formControlName="sabkategori" >
+                <ng-container *ngFor="let pod of category">
+                  <mat-option *ngIf="pod.parentCode==selected"  value="{{pod.code}}">
+                    {{pod.name}}
+                  </mat-option>
+                </ng-container>  
+              </mat-select>
+         
+            </mat-form-field>
+        
+            <br>
+            <ng-container>
+            
+            <textarea formControlName="amaunt" matInput placeholder="Enter amount for this category"></textarea>
+            <br>
+            
+         </ng-container> 
+            
+        
+          
+          
+          
+          </div>
+          </div>
+        </form>
+
+
+
+
+
+<form [formGroup]="form1">
+
+
   
   <div class="modal-body">
   <div class="centarForma">
-   <ng-container matColumnDef="marezovic">
-  <form [formGroup]="form" (ngSubmit)="submit(form)">
+    
+
+ 
     <mat-form-field appearance="fill">
       <mat-label>Choose category</mat-label>
-      <mat-select name="andr" required [(ngModel)]="selected"  formControlName="kategori"  placeholder="Categories">
+      <mat-select name="andr" required [(ngModel)]="selected1"  formControlName="kategori1"  placeholder="Categories">
         <ng-container *ngFor="let kat of category">
             <mat-option *ngIf="kat.parentCode==null"  value="{{kat.code}}">
               {{kat.name}}
@@ -27,25 +84,38 @@
   
     <mat-form-field appearance="fill">
       <mat-label>Choose subcategory</mat-label>
-      <mat-select name="ok" formControlName="sabkategori" >
+      <mat-select name="ok" formControlName="sabkategori1" >
         <ng-container *ngFor="let pod of category">
-          <mat-option *ngIf="pod.parentCode==selected"  value="{{pod.code}}">
+          <mat-option *ngIf="pod.parentCode==selected1"  value="{{pod.code}}">
             {{pod.name}}
           </mat-option>
         </ng-container>  
       </mat-select>
  
     </mat-form-field>
+
+    <br>
+    <ng-container>
     
-  </form>
-  </ng-container>
+    
+    <br>
+    
+ </ng-container> 
+    
+
+  
+
+
+
+  
   <div class="modal-footer">
+      
     <button id="izadji" type="button" 
     class="btn btn-success"
           >
           Cancel
       </button>
-      <button (click)="submit(form)" id="sacuvaj" type="button" 
+      <button (click)="submit(form,form1)" id="sacuvaj" type="button" 
       class="btn btn-success" 
           >
          Apply
@@ -54,6 +124,10 @@
   
   </div>
   </div>
+</form>
+</div>
+    
+
   
   
   

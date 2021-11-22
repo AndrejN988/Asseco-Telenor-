@@ -66,6 +66,13 @@ export class TransactionService {
       return this.http.post(url,data);
     }
 
+
+    public addSplit(id:any,data:any){
+      
+
+      const url=`http://127.0.0.1:4010/transaction/${id}/split`;
+      return this.http.post(url,data);
+    }
     
   
 }

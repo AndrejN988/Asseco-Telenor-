@@ -46,7 +46,7 @@
             <mat-icon>list_alt</mat-icon>
             <span>PRODUCT CATALOGUE</span>
         </button>
-        <button mat-button class="menu-button"  routerLink="/"  routerLinkActive="mat-accent">
+        <button mat-button class="menu-button"  routerLink="/transactions"  routerLinkActive="mat-accent">
             <mat-icon>trending_up</mat-icon>
             <span>PFM</span>
         </button>
@@ -70,7 +70,7 @@
     <mat-sidenav-content>
         <div class="content mat-elevation-z8">
 
-            <app-transaction></app-transaction>
+            <router-outlet></router-outlet>
             
         </div>
     </mat-sidenav-content>

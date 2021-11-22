@@ -1,4 +1,5 @@
-<button (click)="openSelect()"  class=" btn-primary" style="border-radius: 3px; margin-bottom: 10px;">Categorize multiple transactions</button>
+<div >
+<button (click)="openSelect()"  class=" btn-primary" id="ctz">Categorize multiple transactions</button>
 
 <div *ngFor="let item of elementcina">
     <div *ngIf="dvaDugmeta">
@@ -9,6 +10,27 @@
  
 
 
+  
+    
+    <mat-select style="float:right" placeholder="Filter by kind" (selectionChange)="onChange($event)" >
+      <mat-option value="dep">Deposit</mat-option>
+      <mat-option value="fee">Fee</mat-option>
+      <mat-option value="pmt">Payment</mat-option>
+      <mat-option value="wdw">Withdrawal</mat-option>
+      <mat-option value="inc">Interest</mat-option>
+      <mat-option value="rev">Reversal</mat-option>
+      <mat-option value="adj">Adjustment</mat-option>
+      <mat-option value="lnd">Loan disbursement</mat-option>
+      <mat-option value="lnr">Loan repayment</mat-option>
+      <mat-option value="fcx">Foreign currency</mat-option>
+      <mat-option value="aop">Account openning</mat-option>
+      <mat-option value="acl">Account closing</mat-option>
+      <mat-option value="spl">Split payment</mat-option>
+      <mat-option value="sal">Salary</mat-option>
+    </mat-select>
+ 
+
+</div>
 
 
 
@@ -54,8 +76,8 @@
   
     <!-- Name Column -->
     <ng-container matColumnDef="second">
-      <th mat-header-cell *matHeaderCellDef>  </th>
-      <td mat-cell id="and1"  *matCellDef="let element"> 
+      <th mat-header-cell *matHeaderCellDef  mat-sort-header sortActionDescription="Sort by beneficiaryName">  </th>
+      <td mat-cell id="and1"  *matCellDef="let element"  > 
        <div id="idem">
         <td  id="aaa"> {{element.beneficiaryName}}</td>
         <br>
@@ -70,9 +92,9 @@
       <td mat-cell id="and2"  *matCellDef="let element">
         <div>
         <td *ngIf="element.catcode == null "><mat-chip-list>
-          <mat-chip color="primary" (click)="openAddFileDialog(element)"  style=" margin-top:11px ; background-color:gray !important;" selected>&nbsp;• Add category + &nbsp;</mat-chip></mat-chip-list> </td>
+          <mat-chip color="primary" (click)="openAddFileDialog(element)" id="ctg" selected>&nbsp;• Add category + &nbsp;</mat-chip></mat-chip-list> </td>
         <td *ngIf="element.catcode != null "><mat-chip-list>
-          <mat-chip color="primary" (click)="openAddFileDialog(element)"  style=" margin-top:11px ;" selected>&nbsp;• {{element.catcode}}&nbsp;</mat-chip></mat-chip-list> </td>
+          <mat-chip color="primary" (click)="openAddFileDialog(element)" id="ctg1"  selected>&nbsp;• {{element.catcode}}&nbsp;</mat-chip></mat-chip-list> </td>
         </div>
       </td>
     </ng-container>
@@ -86,7 +108,7 @@
 
     <ng-container matColumnDef="fifth">
         <th mat-header-cell *matHeaderCellDef>  </th>
-        <td mat-cell id="and4" *matCellDef="let element"><mat-icon> location_on</mat-icon><br> <button (click)="openSplitMenu(element)" class="tbl-btn btn-primary" >Split tranasction</button> </td>
+        <td mat-cell  *matCellDef="let element"><mat-icon> location_on</mat-icon><br> <button id="and4" (click)="openSplitMenu(element)" class="tbl-btn btn-primary" >Split tranasction</button> </td>
 
       </ng-container>
   

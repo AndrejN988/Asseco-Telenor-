@@ -14,6 +14,7 @@ import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dial
 import { CategoryComponent } from '../category/category.component';
 import { filter } from 'rxjs/operators';
 import { SplitTransComponent } from '../split-trans/split-trans.component';
+import * as _ from 'lodash';
 
 
 
@@ -29,7 +30,7 @@ import { SplitTransComponent } from '../split-trans/split-trans.component';
 export class TransactionComponent implements AfterViewInit, OnInit {
 
    prekidac : number=0;
-
+   dropDownResponse:any = [];
   fileNameDialogRef: MatDialogRef<CategoryComponent> | undefined;
   fileNameDialogRef1: MatDialogRef<SplitTransComponent> | undefined;
 
@@ -61,10 +62,12 @@ public ngOnInit(): void{
         console.log(this.elementcina[0].description)
       });
       
-      
+      this.dataSource.sort = this.sort; 
      
       
 }
+
+
 
 
 
@@ -158,6 +161,18 @@ openAddFileDialog(element:Transaction){
     }
   }
 
+
+  onChange($event:any){
+    this.dropDownResponse=this.transactions1;
+    let filteredData = _.filter(this.dropDownResponse,(item:any) =>{
+      console.log(item.kind)
+      return item.kind.toLowerCase() ==  $event.value.toLowerCase();
+    })
+    this.dataSource = new MatTableDataSource(filteredData);
+    this.dataSource.paginator = this.paginator!;  
+    this.dataSource.sort = this.sort!;
+  }
+
   div1Function(){
     this.dvaDugmeta=true;
  }
@@ -217,7 +232,7 @@ openAddFileDialog(element:Transaction){
     @ViewChild(MatSort) sort: MatSort;
     ngAfterViewInit(): void {
       this.dataSource.paginator = this.paginator!;
-      this.dataSource.sort = this.sort;
+      
      }
    // displayedColumns: string[] = ['imageUrl','position', 'name',];
 
@@ -251,7 +266,7 @@ openAddFileDialog(element:Transaction){
     ).subscribe(cat => {
   
       
-      console.log("else")
+      console.log(cat)
       let a= this.transactions1.indexOf(element);
       //element.catcode=cat;
       this.transactions1[a].catcode=cat;
